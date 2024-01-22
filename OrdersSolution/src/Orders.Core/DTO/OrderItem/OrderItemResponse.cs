@@ -1,10 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Orders.Core.Entities.Orders
+namespace Orders.Core.DTO.OrderItem
 {
-	public class OrderItem
+	internal class OrderItemResponse
 	{
-		[Key]
 		public Guid Id { get; set; }
 
 		public Guid OrderId { get; set; }

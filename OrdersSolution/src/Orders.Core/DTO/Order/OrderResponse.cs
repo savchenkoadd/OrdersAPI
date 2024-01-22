@@ -1,16 +1,13 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Orders.Core.Entities.Orders
+namespace Orders.Core.DTO.Order
 {
-	public class Order
+	public class OrderResponse
 	{
-		[Key]
 		public Guid Id { get; set; }
 
-		[StringLength(30)]
 		public string? OrderNumber { get; set; }
 
-		[StringLength(50)]
 		public string? CustomerName { get; set; }
 
 		public DateTime PlacedDate { get; set; }
