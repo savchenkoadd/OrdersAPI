@@ -27,7 +27,7 @@ namespace Orders.Infrastructure.Repositories
 
 			if (order is null)
 			{
-				throw new ArgumentException($"Order with id '{orderId}' was not found.");
+				throw new ArgumentException($"Unable to delete order. Order with id '{orderId}' was not found.");
 			}
 
 			_dbContext.Orders.Remove(order);
@@ -53,7 +53,7 @@ namespace Orders.Infrastructure.Repositories
 
 			if (foundOrder is null)
 			{
-				throw new ArgumentException($"Order with id '{orderId}' was not found.");
+				throw new ArgumentException($"Unable to update order. Order with id '{orderId}' was not found.");
 			}
 
 			await CopyProperties(order, foundOrder);

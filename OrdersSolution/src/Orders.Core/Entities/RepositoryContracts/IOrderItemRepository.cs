@@ -4,9 +4,9 @@ namespace Orders.Core.Entities.RepositoryContracts
 {
 	public interface IOrderItemRepository
 	{
-		Task<List<OrderItem>> GetOrderItemsByOrderId(Guid orderId);
+		Task<List<OrderItem>?> GetOrderItemsByOrderId(Guid orderId);
 
-		Task<OrderItem> GetOrderItem(Guid orderItemId);
+		Task<OrderItem?> GetOrderItem(Guid orderItemId);
 
 		Task<int> CreateOrderItem(OrderItem orderItem);
 
