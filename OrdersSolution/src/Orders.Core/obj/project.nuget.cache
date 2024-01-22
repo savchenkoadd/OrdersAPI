@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "g79uyQQ+6kBnwdLXe8+U9fNkO7E21xjpKrfZUHP0MF7bQ2C4HoXxOv28lkdNPDvmpz6OI/aCIKnHRqTZptHaZQ==",
+  "dgSpecHash": "mT+fZ1t4zfQ9pxYZ0Oxgav9Uhna5Tdx9MV/3qv8X2H3B2GXudJmfwK1WX/l08L9tVSAknSv8ylvAao+achyLRw==",
   "success": true,
   "projectFilePath": "C:\\aspnetcore\\OrdersAPI\\OrdersSolution\\src\\Orders.Core\\Orders.Core.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Artem\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\Artem\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512"
+  ],
   "logs": []
 }

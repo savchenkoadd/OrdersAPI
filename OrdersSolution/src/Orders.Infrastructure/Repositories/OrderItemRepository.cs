@@ -1,11 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Orders.Core.Entities.Orders;
-using Orders.Core.Entities.RepositoryContracts;
+using Orders.Core.Domain.Entities.Orders;
+using Orders.Core.Domain.RepositoryContracts;
 using Orders.Infrastructure.Db;
 
 namespace Orders.Infrastructure.Repositories
 {
-	public class OrderItemRepository : IOrderItemRepository
+    public class OrderItemRepository : IOrderItemRepository
 	{
 		private readonly ApplicationDbContext _dbContext;
 
@@ -24,11 +24,6 @@ namespace Orders.Infrastructure.Repositories
 		public async Task<int> DeleteOrderItem(Guid orderItemId)
 		{
 			var foundOrderItem = await GetOrderItem(orderItemId);
-
-			if (foundOrderItem is null)
-			{
-				throw new ArgumentException($"Unable to delete order item. Order item with id '{orderItemId}' was not found.");
-			}
 
 			_dbContext.OrderItems.Remove(foundOrderItem);
 
@@ -50,11 +45,6 @@ namespace Orders.Infrastructure.Repositories
 		public async Task<int> UpdateOrderItem(Guid orderItemId, OrderItem orderItem)
 		{
 			var foundOrderItem = await GetOrderItem(orderItemId);
-
-			if (foundOrderItem is null)
-			{
-				throw new ArgumentException($"Unable to update order item. Order item with id '{orderItemId}' was not found.");
-			}
 
 			await CopyProperties(orderItem, foundOrderItem);
 

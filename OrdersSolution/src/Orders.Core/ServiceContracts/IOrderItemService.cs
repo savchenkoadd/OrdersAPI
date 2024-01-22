@@ -11,7 +11,7 @@ namespace Orders.Core.ServiceContracts
 
 		Task<bool> CreateOrderItem(OrderItemAddRequest? orderItemAddRequest);
 
-		Task<bool> UpdateOrderItem(OrderItemUpdateRequest? orderItemUpdateRequest);
+		Task<bool> UpdateOrderItem(Guid? orderItemId, OrderItemUpdateRequest? orderItemUpdateRequest);
 
 		Task<bool> DeleteOrderItem(Guid? orderItemId);
 	}
