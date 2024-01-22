@@ -1,0 +1,17 @@
+C:\aspnetcore\OrdersAPI\OrdersSolution\src\Orders.Infrastructure\bin\Debug\net7.0\Orders.Infrastructure.deps.json
+C:\aspnetcore\OrdersAPI\OrdersSolution\src\Orders.Infrastructure\bin\Debug\net7.0\Orders.Infrastructure.runtimeconfig.json
+C:\aspnetcore\OrdersAPI\OrdersSolution\src\Orders.Infrastructure\bin\Debug\net7.0\Orders.Infrastructure.dll
+C:\aspnetcore\OrdersAPI\OrdersSolution\src\Orders.Infrastructure\bin\Debug\net7.0\Orders.Infrastructure.pdb
+C:\aspnetcore\OrdersAPI\OrdersSolution\src\Orders.Infrastructure\bin\Debug\net7.0\Orders.Core.dll
+C:\aspnetcore\OrdersAPI\OrdersSolution\src\Orders.Infrastructure\bin\Debug\net7.0\Orders.Core.pdb
+C:\aspnetcore\OrdersAPI\OrdersSolution\src\Orders.Infrastructure\obj\Debug\net7.0\Orders.Infrastructure.csproj.AssemblyReference.cache
+C:\aspnetcore\OrdersAPI\OrdersSolution\src\Orders.Infrastructure\obj\Debug\net7.0\Orders.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\aspnetcore\OrdersAPI\OrdersSolution\src\Orders.Infrastructure\obj\Debug\net7.0\Orders.Infrastructure.AssemblyInfoInputs.cache
+C:\aspnetcore\OrdersAPI\OrdersSolution\src\Orders.Infrastructure\obj\Debug\net7.0\Orders.Infrastructure.AssemblyInfo.cs
+C:\aspnetcore\OrdersAPI\OrdersSolution\src\Orders.Infrastructure\obj\Debug\net7.0\Orders.Infrastructure.csproj.CoreCompileInputs.cache
+C:\aspnetcore\OrdersAPI\OrdersSolution\src\Orders.Infrastructure\obj\Debug\net7.0\Orders.Infrastructure.csproj.CopyComplete
+C:\aspnetcore\OrdersAPI\OrdersSolution\src\Orders.Infrastructure\obj\Debug\net7.0\Orders.Infrastructure.dll
+C:\aspnetcore\OrdersAPI\OrdersSolution\src\Orders.Infrastructure\obj\Debug\net7.0\refint\Orders.Infrastructure.dll
+C:\aspnetcore\OrdersAPI\OrdersSolution\src\Orders.Infrastructure\obj\Debug\net7.0\Orders.Infrastructure.pdb
+C:\aspnetcore\OrdersAPI\OrdersSolution\src\Orders.Infrastructure\obj\Debug\net7.0\Orders.Infrastructure.genruntimeconfig.cache
+C:\aspnetcore\OrdersAPI\OrdersSolution\src\Orders.Infrastructure\obj\Debug\net7.0\ref\Orders.Infrastructure.dll

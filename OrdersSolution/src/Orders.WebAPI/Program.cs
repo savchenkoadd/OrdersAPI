@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using Orders.Infrastructure.Db;
+
 namespace Orders.WebAPI
 {
 	public class Program
@@ -9,6 +12,10 @@ namespace Orders.WebAPI
 			// Add services to the container.
 
 			builder.Services.AddControllers();
+			builder.Services.AddDbContext<ApplicationDbContext>(options =>
+			{
+				options.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
+			});
 
 			var app = builder.Build();
 
