@@ -11,13 +11,16 @@ namespace Orders.Core.Services
 	public class OrderService : IOrderService
 	{
 		private readonly IOrderRepository _orderRepository;
+		private readonly IOrderItemRepository _orderItemRepository;
 		private readonly IMapper _mapper;
 
         public OrderService(
-				IOrderRepository orderRepository
+				IOrderRepository orderRepository,
+				IOrderItemRepository orderItemRepository
 			)
         {
             _orderRepository = orderRepository;
+			_orderItemRepository = orderItemRepository;
 			_mapper = new Mapper(new MapperConfiguration(cfg => cfg.AddProfile(new MapperProfile())));
 		}
 
@@ -28,23 +31,20 @@ namespace Orders.Core.Services
 			var order = new Order()
 			{
 				CustomerName = orderAddRequest!.CustomerName,
-				Id = Guid.NewGuid(),
+				Id = orderAddRequest!.OrderId,
 				OrderNumber = await GenerateOrderNumber(),
 				PlacedDate = DateTime.Now,
-				TotalAmount = 0
+				TotalAmount = await CalculateTotalCost(orderAddRequest.OrderId)
 			};
 
 			var affected = await _orderRepository.CreateOrder(order);
 
-			if (affected != 1)
-			{
-				throw new InvalidOperationException("Error with the database");
-			}
+			ResultChecker.CheckAffectedAndThrowIfNeeded(affected);
 
 			return order.Id;
 		}
 
-		public async Task<bool> DeleteOrder(Guid? orderId)
+		public async Task DeleteOrder(Guid? orderId)
 		{
 			await ValidationHelper.ValidateObjects(orderId);
 
@@ -57,7 +57,7 @@ namespace Orders.Core.Services
 
 			var affected = await _orderRepository.DeleteOrder(orderId!.Value);
 
-			return affected == 1;
+			ResultChecker.CheckAffectedAndThrowIfNeeded(affected);
 		}
 
 		public async Task<List<OrderResponse>> GetAllOrders()
@@ -101,12 +101,28 @@ namespace Orders.Core.Services
 
 			var affected = await _orderRepository.UpdateOrder(orderId.Value, order);
 
-			if (affected != 1)
-			{
-				throw new InvalidOperationException("Error with the database");
-			}
+			ResultChecker.CheckAffectedAndThrowIfNeeded(affected);
 
 			return order.Id;
+		}
+
+		private async Task<double> CalculateTotalCost(Guid orderId)
+		{
+			var orderItems = await _orderItemRepository.GetOrderItemsByOrderId(orderId);
+
+			if (orderItems is null)
+			{
+				throw new ArgumentException("Unable to calculate total cost of order. Order id is most likely invalid.");
+			}
+
+			double totalCost = 0;
+
+			foreach (var item in orderItems)
+			{
+				totalCost += item.TotalPrice;
+			}
+
+			return totalCost;
 		}
 
 		private async Task<string> GenerateOrderNumber()

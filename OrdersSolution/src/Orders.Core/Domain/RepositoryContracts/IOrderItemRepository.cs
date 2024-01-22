@@ -1,17 +1,17 @@
-﻿using Orders.Core.Entities.Orders;
+﻿using Orders.Core.Domain.Entities.Orders;
 
-namespace Orders.Core.Entities.RepositoryContracts
+namespace Orders.Core.Domain.RepositoryContracts
 {
-	public interface IOrderItemRepository
-	{
-		Task<List<OrderItem>?> GetOrderItemsByOrderId(Guid orderId);
+    public interface IOrderItemRepository
+    {
+        Task<List<OrderItem>?> GetOrderItemsByOrderId(Guid orderId);
 
-		Task<OrderItem?> GetOrderItem(Guid orderItemId);
+        Task<OrderItem?> GetOrderItem(Guid orderItemId);
 
-		Task<int> CreateOrderItem(OrderItem orderItem);
+        Task<int> CreateOrderItem(OrderItem orderItem);
 
-		Task<int> UpdateOrderItem(Guid orderItemId, OrderItem orderItem);
+        Task<int> UpdateOrderItem(Guid orderItemId, OrderItem orderItem);
 
-		Task<int> DeleteOrderItem(Guid orderItemId);
-	}
+        Task<int> DeleteOrderItem(Guid orderItemId);
+    }
 }

@@ -1,12 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AutoMapper;
+using Orders.Core.Domain.Entities.Orders;
+using Orders.Core.DTO.Order;
 
 namespace Orders.Core.Services.Profiles
 {
-	internal class MapperProfile
+	internal class MapperProfile : Profile
 	{
-	}
+        public MapperProfile()
+        {
+            CreateMap<Order, OrderResponse>();
+			CreateMap<OrderResponse, Order>();
+		}
+    }
 }

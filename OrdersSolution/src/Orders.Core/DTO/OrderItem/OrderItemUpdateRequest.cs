@@ -2,7 +2,7 @@
 
 namespace Orders.Core.DTO.OrderItem
 {
-	internal class OrderItemUpdateRequest
+	public class OrderItemUpdateRequest
 	{
 		[Required]
 		[Key]

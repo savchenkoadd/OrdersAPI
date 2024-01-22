@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Orders.Core.Entities.Orders;
+using Orders.Core.Domain.Entities.Orders;
 
 namespace Orders.Infrastructure.Db
 {
-	public class ApplicationDbContext : DbContext
+    public class ApplicationDbContext : DbContext
 	{
         public ApplicationDbContext()
         {

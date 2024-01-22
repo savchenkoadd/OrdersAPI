@@ -2,7 +2,7 @@
 
 namespace Orders.Core.DTO.OrderItem
 {
-	internal class OrderItemResponse
+	public class OrderItemResponse
 	{
 		public Guid Id { get; set; }
 

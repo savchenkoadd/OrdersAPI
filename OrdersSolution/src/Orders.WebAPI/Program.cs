@@ -1,11 +1,13 @@
 using Microsoft.EntityFrameworkCore;
-using Orders.Core.Entities.RepositoryContracts;
+using Orders.Core.Domain.RepositoryContracts;
+using Orders.Core.ServiceContracts;
+using Orders.Core.Services;
 using Orders.Infrastructure.Db;
 using Orders.Infrastructure.Repositories;
 
 namespace Orders.WebAPI
 {
-	public class Program
+    public class Program
 	{
 		public static void Main(string[] args)
 		{
@@ -20,6 +22,8 @@ namespace Orders.WebAPI
 			});
 
 			builder.Services.AddScoped<IOrderRepository, OrderRepository>();
+			builder.Services.AddScoped<IOrderItemRepository, OrderItemRepository>();
+			builder.Services.AddScoped<IOrderService, OrderService>();
 
 			var app = builder.Build();
 
