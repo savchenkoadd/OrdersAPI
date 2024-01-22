@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "qQigiXNg3Ve0mcayYOTCSb60lOwuSei/5SADi+KWv+EChvL2QxZoN0KOeZanSu6l9SQ4QfiuK7fo+8/MDv6nNA==",
+  "dgSpecHash": "NpmWwKiJZoLuGF8g2kZTpzyrHZYyEuD1t96zP5dawVF4ST9yp8iIewomUoA7JL0DCe/eAhfHOIE2M7kF38xGyw==",
   "success": true,
   "projectFilePath": "C:\\aspnetcore\\OrdersAPI\\OrdersSolution\\src\\Orders.WebAPI\\Orders.WebAPI.csproj",
   "expectedPackageFiles": [

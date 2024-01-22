@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
+using Orders.Core.Entities.RepositoryContracts;
 using Orders.Infrastructure.Db;
+using Orders.Infrastructure.Repositories;
 
 namespace Orders.WebAPI
 {
@@ -16,6 +18,8 @@ namespace Orders.WebAPI
 			{
 				options.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
 			});
+
+			builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 
 			var app = builder.Build();
 
