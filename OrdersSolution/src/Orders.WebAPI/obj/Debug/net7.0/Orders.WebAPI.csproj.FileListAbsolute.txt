@@ -72,3 +72,4 @@ C:\aspnetcore\OrdersAPI\OrdersSolution\src\Orders.WebAPI\bin\Debug\net7.0\Orders
 C:\aspnetcore\OrdersAPI\OrdersSolution\src\Orders.WebAPI\bin\Debug\net7.0\Orders.Infrastructure.dll
 C:\aspnetcore\OrdersAPI\OrdersSolution\src\Orders.WebAPI\bin\Debug\net7.0\Orders.Infrastructure.pdb
 C:\aspnetcore\OrdersAPI\OrdersSolution\src\Orders.WebAPI\bin\Debug\net7.0\Orders.Core.pdb
+C:\aspnetcore\OrdersAPI\OrdersSolution\src\Orders.WebAPI\bin\Debug\net7.0\AutoMapper.dll

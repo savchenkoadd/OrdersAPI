@@ -9,10 +9,10 @@ namespace Orders.Core.ServiceContracts
 
 		Task<OrderItemResponse> GetOrderItem(Guid? orderItemId);
 
-		Task<bool> CreateOrderItem(OrderItemAddRequest? orderItemAddRequest);
+		Task<Guid> CreateOrderItem(OrderItemAddRequest? orderItemAddRequest);
 
-		Task<bool> UpdateOrderItem(Guid? orderItemId, OrderItemUpdateRequest? orderItemUpdateRequest);
+		Task<Guid> UpdateOrderItem(Guid? orderItemId, OrderItemUpdateRequest? orderItemUpdateRequest);
 
-		Task<bool> DeleteOrderItem(Guid? orderItemId);
+		Task DeleteOrderItem(Guid? orderItemId);
 	}
 }

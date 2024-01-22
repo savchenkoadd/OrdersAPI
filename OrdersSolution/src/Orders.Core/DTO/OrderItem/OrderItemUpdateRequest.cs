@@ -5,7 +5,6 @@ namespace Orders.Core.DTO.OrderItem
 	public class OrderItemUpdateRequest
 	{
 		[Required]
-		[Key]
 		public Guid OrderId { get; set; }
 
 		[Required]

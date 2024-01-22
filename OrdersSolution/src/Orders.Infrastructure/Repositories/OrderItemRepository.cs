@@ -30,6 +30,11 @@ namespace Orders.Infrastructure.Repositories
 			return await _dbContext.SaveChangesAsync();
 		}
 
+		public async Task<bool> Exists(Guid orderItemId)
+		{
+			return await _dbContext.OrderItems.AnyAsync(x => x.Id == orderItemId);
+		}
+
 		public async Task<OrderItem?> GetOrderItem(Guid orderItemId)
 		{
 			var orderItem = await _dbContext.OrderItems.FindAsync(orderItemId);

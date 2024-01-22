@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Orders.Core.Domain.Entities.Orders;
 using Orders.Core.DTO.Order;
+using Orders.Core.DTO.OrderItem;
 
 namespace Orders.Core.Services.Profiles
 {
@@ -10,6 +11,8 @@ namespace Orders.Core.Services.Profiles
         {
             CreateMap<Order, OrderResponse>();
 			CreateMap<OrderResponse, Order>();
+			CreateMap<OrderItemAddRequest, OrderItem>();
+			CreateMap<OrderItem, OrderItemResponse>();
 		}
-    }
+	}
 }

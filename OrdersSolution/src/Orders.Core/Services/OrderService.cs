@@ -31,10 +31,10 @@ namespace Orders.Core.Services
 			var order = new Order()
 			{
 				CustomerName = orderAddRequest!.CustomerName,
-				Id = orderAddRequest!.OrderId,
+				Id = orderAddRequest!.OrderId.Value,
 				OrderNumber = await GenerateOrderNumber(),
 				PlacedDate = DateTime.Now,
-				TotalAmount = await CalculateTotalCost(orderAddRequest.OrderId)
+				TotalAmount = await CalculateTotalCost(orderAddRequest.OrderId.Value)
 			};
 
 			var affected = await _orderRepository.CreateOrder(order);
@@ -98,6 +98,7 @@ namespace Orders.Core.Services
 			}
 
 			order.CustomerName = orderUpdateRequest!.CustomerName;
+			order.Id = orderUpdateRequest!.OrderId;
 
 			var affected = await _orderRepository.UpdateOrder(orderId.Value, order);
 

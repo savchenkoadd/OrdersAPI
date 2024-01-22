@@ -8,6 +8,8 @@ namespace Orders.Core.Domain.RepositoryContracts
 
         Task<OrderItem?> GetOrderItem(Guid orderItemId);
 
+        Task<bool> Exists(Guid orderItemId);
+
         Task<int> CreateOrderItem(OrderItem orderItem);
 
         Task<int> UpdateOrderItem(Guid orderItemId, OrderItem orderItem);

@@ -12,6 +12,6 @@ namespace Orders.Core.ServiceContracts
 
 		Task<Guid> UpdateOrder(Guid? orderId, OrderUpdateRequest? orderUpdateRequest);
 
-		Task<bool> DeleteOrder(Guid? orderId);
+		Task DeleteOrder(Guid? orderId);
 	}
 }

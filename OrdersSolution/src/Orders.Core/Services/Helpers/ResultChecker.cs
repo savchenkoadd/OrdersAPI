@@ -6,9 +6,9 @@
 
 		internal static void CheckAffectedAndThrowIfNeeded(int affectedRows)
 		{
-			if (affectedRows)
+			if (affectedRows != EXPECTED_AFFECTED_ROWS)
 			{
-
+				throw new Exception("Affected rows did not match expected ones.");
 			}
 		}
 	}

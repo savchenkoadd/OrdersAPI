@@ -4,6 +4,7 @@ using Orders.Core.ServiceContracts;
 using Orders.Core.Services;
 using Orders.Infrastructure.Db;
 using Orders.Infrastructure.Repositories;
+using Orders.WebAPI.Middleware;
 
 namespace Orders.WebAPI
 {
@@ -24,15 +25,25 @@ namespace Orders.WebAPI
 			builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 			builder.Services.AddScoped<IOrderItemRepository, OrderItemRepository>();
 			builder.Services.AddScoped<IOrderService, OrderService>();
+			builder.Services.AddScoped<IOrderItemService, OrderItemService>();
 
 			var app = builder.Build();
 
 			// Configure the HTTP request pipeline.
 
+			if (app.Environment.IsDevelopment())
+			{
+				app.UseDeveloperExceptionPage();
+			}
+			else
+			{
+				app.UseExceptionHandler("/error");
+				app.UseHsts();
+			}
+
 			app.UseHttpsRedirection();
-
+			app.UseRouting();
 			app.UseAuthorization();
-
 
 			app.MapControllers();
 

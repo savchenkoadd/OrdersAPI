@@ -9,3 +9,4 @@ C:\aspnetcore\OrdersAPI\OrdersSolution\src\Orders.Core\obj\Debug\net7.0\Orders.C
 C:\aspnetcore\OrdersAPI\OrdersSolution\src\Orders.Core\obj\Debug\net7.0\refint\Orders.Core.dll
 C:\aspnetcore\OrdersAPI\OrdersSolution\src\Orders.Core\obj\Debug\net7.0\Orders.Core.pdb
 C:\aspnetcore\OrdersAPI\OrdersSolution\src\Orders.Core\obj\Debug\net7.0\ref\Orders.Core.dll
+C:\aspnetcore\OrdersAPI\OrdersSolution\src\Orders.Core\obj\Debug\net7.0\Orders.Core.csproj.AssemblyReference.cache
