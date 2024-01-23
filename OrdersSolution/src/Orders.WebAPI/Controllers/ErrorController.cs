@@ -8,7 +8,6 @@ namespace Orders.WebAPI.Controllers
 	[ApiController]
 	public class ErrorController : ControllerBase
 	{
-		[HttpGet("")]
 		public IActionResult Error()
 		{
 			var context = HttpContext.Features.Get<IExceptionHandlerFeature>();

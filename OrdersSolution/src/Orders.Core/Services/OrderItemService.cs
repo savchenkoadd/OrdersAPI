@@ -95,16 +95,16 @@ namespace Orders.Core.Services
 				throw new ArgumentException("Unable to update order item. Order item id is invalid.");
 			}
 
-			foundOrderItem.UnitPrice = orderItemUpdateRequest!.UnitPrice;
-			foundOrderItem.OrderId = orderItemUpdateRequest.OrderId;
+			foundOrderItem.UnitPrice = orderItemUpdateRequest!.UnitPrice.Value;
 			foundOrderItem.ProductName = orderItemUpdateRequest.ProductName;
-			foundOrderItem.Quantity = orderItemUpdateRequest.Quantity;
+			foundOrderItem.Quantity = orderItemUpdateRequest.Quantity.Value;
+			foundOrderItem.TotalPrice = foundOrderItem.Quantity * foundOrderItem.UnitPrice;
 
 			var affected = await _orderItemRepository.UpdateOrderItem(orderItemId.Value, foundOrderItem);
 
 			ResultChecker.CheckAffectedAndThrowIfNeeded(affected);
 
-			return foundOrderItem.OrderId;
+			return foundOrderItem.Id;
 		}
 	}
 }

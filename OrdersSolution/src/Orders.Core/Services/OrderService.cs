@@ -98,7 +98,6 @@ namespace Orders.Core.Services
 			}
 
 			order.CustomerName = orderUpdateRequest!.CustomerName;
-			order.Id = orderUpdateRequest!.OrderId;
 
 			var affected = await _orderRepository.UpdateOrder(orderId.Value, order);
 

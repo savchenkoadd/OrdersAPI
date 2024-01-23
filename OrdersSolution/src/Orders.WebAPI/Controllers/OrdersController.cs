@@ -44,17 +44,13 @@ namespace Orders.WebAPI.Controllers
 			return CreatedAtAction(nameof(GetOrder), new { id = orderId }, orderAddRequest);
 		}
 
-		//POST: /api/Orders/{id}
-		[HttpPut("{id}")]
-		public async Task<ActionResult<OrderResponse>> UpdateOrder(Guid? id,
-			[Bind(
-			nameof(OrderUpdateRequest.OrderId),
-			nameof(OrderUpdateRequest.CustomerName)
-			)] OrderUpdateRequest? orderUpdateRequest)
+		//PUT: /api/Orders/{orderId}
+		[HttpPut("{orderId}")]
+		public async Task<ActionResult<OrderResponse>> UpdateOrder(Guid? orderId, OrderUpdateRequest? orderUpdateRequest)
 		{
-			var orderId = await _orderService.UpdateOrder(id, orderUpdateRequest);
+			var foundId = await _orderService.UpdateOrder(orderId, orderUpdateRequest);
 
-			return Ok(await _orderService.GetOrder(orderId));
+			return Ok(await _orderService.GetOrder(foundId));
 		}
 
 		//DELETE: /api/Orders/{id}

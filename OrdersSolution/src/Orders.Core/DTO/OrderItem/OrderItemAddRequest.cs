@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Runtime.InteropServices;
 
 namespace Orders.Core.DTO.OrderItem
 {
@@ -6,7 +7,7 @@ namespace Orders.Core.DTO.OrderItem
 	{
 		[Required]
 		[Key]
-		public Guid OrderId { get; set; }
+		public Guid? OrderId { get; set; }
 
 		[Required]
 		[StringLength(50)]
@@ -14,10 +15,10 @@ namespace Orders.Core.DTO.OrderItem
 
 		[Required]
 		[Range(0, int.MaxValue)]
-		public int Quantity { get; set; }
+		public int? Quantity { get; set; }
 
 		[Required]
 		[Range(0, double.MaxValue)]
-		public double UnitPrice { get; set; }
+		public double? UnitPrice { get; set; }
 	}
 }
